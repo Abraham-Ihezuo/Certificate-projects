@@ -2,7 +2,7 @@ import { quotes } from "./data/quotes";
 import { useState } from "react";
 
 const App = () => {
-  const [quote, setQuote] = useState(quotes[0]);
+  const [quote, setQuote] = useState(quotes[8]);
 
   const getNewQuote = () => {
     const getRandom = Math.floor(Math.random() * quotes.length);

@@ -1,39 +1,78 @@
 .quote-box {
-  display: grid;
-  grid-template-rows: 115px auto 1fr;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 10px;
-  padding: 10px;
-  width: 510px;
-  height: 185px;
+  width: 45vw;
+  max-width: 800px;
+  height: 47vh;
+  padding: 15px;
+  box-shadow: 1px 1px 10px 1px black;
   background-color: rgba(255, 109, 4, 0.961);
+  transition: all 0.3s ease;
 }
 
 .text {
-  font-size: 20px;
+  width: 100%;
+  height: 27vh;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: justify;
+  overflow-y: auto;
+  font-size: 1.6rem;
+  line-height: 1.13;
   color: white;
 }
 
+.text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.text::-webkit-scrollbar-thumb:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
 .author {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: bold;
   color: black;
 }
 
-.new-quote {
-  height: 32px;
-  width: 100px;
+.quote-btn-container {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+
+.new-quote,
+.tweet-quote {
+  height: 40px;
   font-family: 'Times New Roman', Times, serif;
   color: black;
-  font-size: 18px;
-  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 4px;
   border: none;
   outline: 1px solid black;
   background-color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  flex: 1;
 
   &:active {
     border: none;
-    color: rgb(67, 67, 87);
+    color: hsl(240, 13%, 40%);
   }
 
   &:hover {
@@ -43,385 +82,190 @@
   }
 }
 
-.tweet-quote {
-  text-decoration: none;
-  height: 32px;
-  width: 100px;
-  font-size: 18px;
-  border-radius: 6px;
-  border: none;
-  outline: 1px solid black;
-  color: black;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  &:active {
-    border: none;
-    color: rgb(67, 67, 87);
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(236, 236, 236);
-    transition: background-color 0.3s ease-in;
-  }
-}
-
-.quote-btn-container {
-  display: flex;
-  justify-content: space-between;
-  width: 220px;
-}
-
-@media (max-width: 2560px) {
+@media (max-width: 425px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 400px 60px 1fr;
-    gap: 160px;
-    width: 2000px;
-    height: 920px;
-    border-radius: 15px;
-    padding: 28px;
+    width: 90vw;
+    min-height: 60vh;
   }
 
   .text {
-    font-size: 85px;
+    font-size: 1.36rem;
+    height: 30vh;
   }
 
   .author {
-    font-size: 85px;
-  }
-
-  .new-quote {
-    font-size: 85px;
-    height: 130px;
-    width: 480px;
-    border-radius: 13px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 85px;
-    height: 130px;
-    width: 480px;
-    border-radius: 13px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.23rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 1020px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 1.17rem;
   }
 }
 
-@media (max-width: 2017px) {
+@media (min-width: 425px) and (max-width: 527px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 250px 60px 1fr;
-    gap: 60px;
-    width: 1100px;
-    height: 500px;
-    border-radius: 15px;
-    padding: 28px;
+    width: 90vw;
+    min-height: 65vh;
   }
 
   .text {
-    font-size: 45px;
-    word-spacing: 4px;
+    font-size: 1.5rem;
+    height: 35vh;
   }
 
   .author {
-    font-size: 45px;
-  }
-
-  .new-quote {
-    font-size: 45px;
-    height: 80px;
-    width: 270px;
-    border-radius: 11px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 50px;
-    height: 80px;
-    width: 270px;
-    border-radius: 11px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.32rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 1.25rem;
   }
 }
 
-@media (max-width: 1170px) {
+@media (min-width: 527px) and (max-width: 600px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 180px 40px 1fr;
-    gap: 60px;
-    width: 800px;
-    height: 390px;
-    border-radius: 15px;
-    padding: 17px;
+    width: 90vw;
+    min-height: 70vh;
   }
 
   .text {
-    font-size: 35px;
+    font-size: 1.7rem;
+    height: 40vh;
   }
 
   .author {
-    font-size: 35px;
-  }
-
-  .new-quote {
-    font-size: 32px;
-    height: 55px;
-    width: 200px;
-    border-radius: 7px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 32px;
-    height: 55px;
-    width: 200px;
-    border-radius: 7px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.47rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 440px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 1.37rem;
   }
 }
 
-@media (max-width: 840px) {
+@media (min-width: 600px) and (max-width: 768px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 120px 20px 1fr;
-    gap: 60px;
-    width: 600px;
-    height: 300px;
-    border-radius: 15px;
-    padding: 15px;
+    width: 90vw;
+    min-height: 65vh;
   }
 
   .text {
-    font-size: 26px;
+    font-size: 1.85rem;
+    height: 35vh;
   }
 
   .author {
-    font-size: 26px;
-  }
-
-  .new-quote {
-    font-size: 26px;
-    height: 45px;
-    width: 145px;
-    border-radius: 4px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 26px;
-    height: 45px;
-    width: 145px;
-    border-radius: 4px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.57rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 330px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 1.43rem;
   }
 }
 
-@media (max-width: 639px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 115px auto 1fr;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 12px;
-    width: 370px;
-    height: 175px;
+    width: 90vw;
+    min-height: 65vh;
   }
 
   .text {
-    font-size: 16px;
+    font-size: 2.3rem;
+    height: 35vh;
   }
 
   .author {
-    font-size: 16px;
-  }
-
-  .new-quote {
-    font-size: 16px;
-    height: 27px;
-    width: 100px;
-    border-radius: 1px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 16px;
-    height: 27px;
-    width: 100px;
-    border-radius: 1px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.96rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 220px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 1.8rem;
+    height: 58px;
   }
 }
 
-@media (max-width: 397px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 100px auto 1fr;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 11px;
-    width: 310px;
-    height: 152px;
+    width: 90vw;
+    min-height: 70vh;
   }
 
   .text {
-    font-size: 13.5px;
+    font-size: 2.5rem;
+    height: 37vh;
   }
 
   .author {
-    font-size: 13.5px;
-  }
-
-  .new-quote {
-    font-size: 13px;
-    height: 22px;
-    width: 73px;
-    border-radius: 1px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 13px;
-    height: 22px;
-    width: 73px;
-    border-radius: 1px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 170px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 2rem;
+    height: 60px;
+    border-radius: 6px;
   }
 }
 
-@media (max-width: 334px) {
+@media (min-width: 1440px) and (max-width: 2560px) {
   .quote-box {
-    display: grid;
-    grid-template-rows: 100px auto 1fr;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 11px;
-    width: 270px;
-    height: 152px;
+    width: 90vw;
+    min-height: 65vh;
   }
 
   .text {
-    font-size: 13px;
+    font-size: 3.1rem;
+    height: 36vh;
   }
 
   .author {
-    font-size: 13px;
-  }
-
-  .new-quote {
-    font-size: 13px;
-    height: 22px;
-    width: 73px;
-    border-radius: 1px;
-    color: black;
-    border: none;
-    background-color: white;
-  }
-
-  .tweet-quote {
-    text-decoration: none;
-    font-size: 13px;
-    height: 22px;
-    width: 73px;
-    border-radius: 1px;
-    border: none;
-    color: black;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2.85rem;
+    margin-bottom: 15px;
   }
 
   .quote-btn-container {
-    display: flex;
-    justify-content: space-between;
-    width: 170px;
+    max-width: 90vw;
+  }
+
+  .new-quote,
+  .tweet-quote {
+    font-size: 2.7rem;
+    height: 78px;
+    border-radius: 12px;
   }
 }
