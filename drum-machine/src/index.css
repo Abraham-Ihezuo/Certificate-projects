@@ -8,5 +8,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   height: 100vh;
 }

@@ -1,0 +1,154 @@
+.drum-machine {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 800px;
+ min-height: auto;
+ width: 90vw;
+ padding: 20px 10px;
+ background-color: rgba(128, 128, 128, 0.2);
+ border-radius: 7px;
+ border: 2px solid black;
+ font-size: 1.1rem;
+ font-weight: bold;
+ color: rgb(255, 0, 0);
+ transition: all 0.3s ease;
+}
+
+.drum-pad-container {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 10px;
+ width: 100%;
+ max-width: 250px;
+ margin-bottom: 20px;
+}
+
+.drum-pad {
+ width: 100%;
+ aspect-ratio: 1/1;
+ box-shadow: 1px 1px 5px 0px rgba(0, 0, 0);
+ color: blue;
+ text-shadow: 1px 0px 1px rgb(0, 0, 0);
+ font-size: 0.9rem;
+ font-weight: bold;
+ border: none;
+ outline: none;
+ border-radius: 5px;
+ background-color: hsl(0, 0%, 53%);
+ cursor: pointer;
+ transition: all 0.3s ease;
+ appearance: none;
+ -webkit-tap-highlight-color: transparent;
+
+ &:hover {
+  color: black;
+  transform: scale(0.98);
+  /* Subtle press effect */
+ }
+
+ &:active {
+  -webkit-text-fill-color: red;
+  outline: 1px solid black;
+ }
+
+ &:focus {
+  color: blue;
+ }
+}
+
+.drum-pad.active {
+ outline: 1px solid black;
+ transform: scale(0.98);
+ color: black;
+}
+
+.display {
+ color: black;
+}
+
+.volume-slide {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 3px;
+ width: 80%;
+}
+
+.volume-slide label {
+ color: blue;
+}
+
+.range {
+ width: 100%;
+ cursor: pointer;
+}
+
+@media (min-width:426px) {
+ .drum-machine {
+  width: 75vw;
+  padding: 30px;
+  font-size: 1.17rem;
+ }
+
+ .drum-pad-container {
+  gap: 15px;
+  max-width: 330px;
+ }
+
+ .drum-pad {
+  font-size: 1.1rem;
+ }
+}
+
+@media (min-width: 769px) {
+ .drum-machine {
+  width: 50vw;
+  padding: 40px;
+  font-size: 1.3rem;
+ }
+
+ .drum-pad-container {
+  gap: 15px;
+  max-width: 340px;
+ }
+
+ .drum-pad {
+  font-size: 1.1rem;
+ }
+}
+
+@media (min-width: 1025px) {
+ .drum-machine {
+  width: 45vw;
+  padding: 25px 10px;
+  font-size: 1.5rem;
+ }
+
+ .drum-pad-container {
+  gap: 15px;
+  max-width: 360px;
+ }
+
+ .drum-pad {
+  font-size: 1.4rem;
+ }
+}
+
+@media (min-width: 1441px) {
+ .drum-machine {
+  width: 50vw;
+  padding: 45px 10px;
+  font-size: 1.8rem;
+ }
+
+ .drum-pad-container {
+  gap: 15px;
+  max-width: 500px;
+ }
+
+ .drum-pad {
+  font-size: 1.7rem;
+ }
+}
